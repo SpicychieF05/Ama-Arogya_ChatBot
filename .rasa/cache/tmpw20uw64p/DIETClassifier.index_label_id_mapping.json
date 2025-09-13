@@ -1,0 +1,15 @@
+{
+  "0": "affirm",
+  "1": "bot_challenge",
+  "2": "deny",
+  "3": "disease_info",
+  "4": "emergency",
+  "5": "goodbye",
+  "6": "greet",
+  "7": "health_info_request",
+  "8": "hygiene",
+  "9": "maternal_care",
+  "10": "nutrition",
+  "11": "symptom_report",
+  "12": "vaccination"
+}

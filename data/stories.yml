@@ -1,0 +1,47 @@
+version: "3.1"
+
+stories:
+  - story: greet and symptom report
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: symptom_report
+      - action: utter_symptom_acknowledge
+
+  - story: maternal care information
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: maternal_care
+      - action: utter_maternal_care_info
+
+  - story: vaccination information
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: vaccination
+      - action: utter_vaccination_info
+
+  - story: emergency response
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: emergency
+      - action: utter_emergency_advice
+
+  - story: health info request
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: health_info_request
+      - action: utter_maternal_care_info
+
+  - story: bot challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - story: goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye

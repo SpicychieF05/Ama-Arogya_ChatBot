@@ -1,0 +1,62 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - symptom_report
+  - health_info_request
+  - maternal_care
+  - vaccination
+  - hygiene
+  - nutrition
+  - disease_info
+  - emergency
+  - bot_challenge
+
+entities:
+  - symptom
+  - disease
+  - age
+  - location
+
+responses:
+  utter_greet:
+    - text: "नमस्ते! मैं आपकी मदद कैसे कर सकता हूँ? (Hello! How can I help you?)"
+    - text: "ନମସ୍କାର! ମୁଁ ଆପଣଙ୍କୁ କିପରି ସାହାଯ୍ୟ କରିପାରେ? (Namaste! How can I help you?)"
+    - text: "Hello! How can I help you?"
+
+  utter_goodbye:
+    - text: "अलविदा! स्वस्थ रहें। (Goodbye! Stay healthy.)"
+    - text: "ବିଦାୟ! ସ୍ୱାସ୍ଥ୍ୟବାନ୍ ରୁହନ୍ତୁ। (Goodbye! Stay healthy.)"
+    - text: "Goodbye! Stay healthy."
+
+  utter_symptom_acknowledge:
+    - text: "मैं आपकी मदद करने के लिए यहाँ हूँ। कृपया अधिक जानकारी दें। (I'm here to help you. Please provide more information.)"
+    - text: "ମୁଁ ଆପଣଙ୍କୁ ସାହାଯ୍ୟ କରିବା ପାଇଁ ଏଠାରେ ଅଛି। ଦୟାକରି ଅଧିକ ସୂଚନା ଦିଅନ୍ତୁ। (I'm here to help you. Please provide more information.)"
+    - text: "I'm here to help you. Please provide more information."
+
+  utter_maternal_care_info:
+    - text: "गर्भावस्था के दौरान नियमित जांच करवाना महत्वपूर्ण है। (Regular check-ups during pregnancy are important.)"
+    - text: "ଗର୍ଭାବସ୍ଥା ସମୟରେ ନିୟମିତ ଯାଞ୍ଚ କରାଇବା ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ। (Regular check-ups during pregnancy are important.)"
+    - text: "Regular check-ups during pregnancy are important."
+
+  utter_vaccination_info:
+    - text: "टीकाकरण बच्चों के स्वास्थ्य के लिए आवश्यक है। (Vaccination is essential for children's health.)"
+    - text: "ଟୀକାକରଣ ପିଲାମାନଙ୍କ ସ୍ୱାସ୍ଥ୍ୟ ପାଇଁ ଆବଶ୍ୟକ। (Vaccination is essential for children's health.)"
+    - text: "Vaccination is essential for children's health."
+
+  utter_emergency_advice:
+    - text: "यह एक आपातकालीन स्थिति प्रतीत होती है। कृपया तुरंत डॉक्टर या स्वास्थ्य कार्यकर्ता से संपर्क करें। (This seems like an emergency. Please contact a doctor or health worker immediately.)"
+    - text: "ଏହା ଏକ ଆପାତକାଳୀନ ସ୍ଥିତି ପ୍ରତୀତ ହେଉଛି। ଦୟାକରି ତୁରନ୍ତ ଡାକ୍ତର କିମ୍ବା ସ୍ୱାସ୍ଥ୍ୟ କର୍ମଚାରୀଙ୍କ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ। (This seems like an emergency. Please contact a doctor or health worker immediately.)"
+    - text: "This seems like an emergency. Please contact a doctor or health worker immediately."
+
+  utter_iamabot:
+    - text: "मैं एक स्वास्थ्य सहायक बॉट हूँ, जो रासा द्वारा संचालित है। (I am a health assistant bot, powered by Rasa.)"
+    - text: "ମୁଁ ଏକ ସ୍ୱାସ୍ଥ୍ୟ ସହାୟକ ବଟ୍, ଯାହା ରାସା ଦ୍ୱାରା ସଞ୍ଚାଳିତ। (I am a health assistant bot, powered by Rasa.)"
+    - text: "I am a health assistant bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

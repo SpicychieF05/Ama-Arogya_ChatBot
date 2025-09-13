@@ -1,0 +1,60 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "back": 1,
+        "deny": 2,
+        "disease_info": 3,
+        "emergency": 4,
+        "goodbye": 5,
+        "greet": 6,
+        "health_info_request": 7,
+        "hygiene": 8,
+        "maternal_care": 9,
+        "nlu_fallback": 10,
+        "nutrition": 11,
+        "out_of_scope": 12,
+        "restart": 13,
+        "session_start": 14,
+        "symptom_report": 15,
+        "vaccination": 16
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "utter_emergency_advice": 13,
+        "utter_goodbye": 14,
+        "utter_greet": 15,
+        "utter_iamabot": 16,
+        "utter_maternal_care_info": 17,
+        "utter_symptom_acknowledge": 18,
+        "utter_vaccination_info": 19
+      },
+      "entities": {
+        "age": 0,
+        "disease": 1,
+        "location": 2,
+        "symptom": 3
+      },
+      "slots": {},
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

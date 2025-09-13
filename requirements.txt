@@ -1,0 +1,6 @@
+rasa==3.6.21
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==1.10.9
+requests==2.32.5
+sqlalchemy==1.4.54
