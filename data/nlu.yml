@@ -1,191 +1,91 @@
 version: "3.1"
 
 nlu:
-  - intent: greet
-    examples: |
-      - hey
-      - hello
-      - hi
-      - hello there
-      - good morning
-      - good evening
-      - नमस्ते
-      - नमस्कार
-      - हेलो
-      - गुड मॉर्निंग
-      - गुड इवनिंग
-      - ନମସ୍କାର
-      - ନମସ୍ତେ
-      - ହେଲୋ
-      - ସୁପ୍ରଭାତ
-      - ସୁଭ ସନ୍ଧ୍ୟା
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
 
-  - intent: goodbye
-    examples: |
-      - bye
-      - goodbye
-      - see you later
-      - take care
-      - अलविदा
-      - बाय
-      - गुडबाय
-      - फिर मिलेंगे
-      - ବିଦାୟ
-      - ବାୟ
-      - ଗୁଡବାୟ
-      - ପରେ ମିଳିବ
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
 
-  - intent: affirm
-    examples: |
-      - yes
-      - y
-      - indeed
-      - of course
-      - correct
-      - हाँ
-      - जी हाँ
-      - ठीक है
-      - सही
-      - ହଁ
-      - ଠିକ୍ ଅଛି
-      - ସତ୍ୟ
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
 
-  - intent: deny
-    examples: |
-      - no
-      - n
-      - never
-      - I don't think so
-      - don't like that
-      - no way
-      - not really
-      - नहीं
-      - नही
-      - मतलब नहीं
-      - ନା
-      - ନାହିଁ
-      - ମତ୍ଲବ ନାହିଁ
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
 
-  - intent: symptom_report
-    examples: |
-      - my child has fever
-      - I have cough
-      - feeling sick
-      - stomach pain
-      - headache
-      - diarrhea
-      - vomiting
-      - मेरा बच्चा बुखार है
-      - मुझे खाँसी है
-      - बीमार महसूस कर रहा हूँ
-      - पेट दर्द
-      - सिर दर्द
-      - दस्त
-      - उल्टी
-      - ମୋ ପିଲାକୁ ଜ୍ବର
-      - ମୋତେ କାଶ
-      - ଅସୁସ୍ଥ ଅନୁଭବ କରୁଛି
-      - ପେଟ ବ୍ୟଥା
-      - ମୁଣ୍ଡ ବ୍ୟଥା
-      - ଡାଏରିଆ
-      - ବାନ୍ତି
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
 
-  - intent: health_info_request
-    examples: |
-      - tell me about vaccination
-      - what is maternal care
-      - information about hygiene
-      - nutrition for children
-      - टीकाकरण के बारे में बताएं
-      - मातृ देखभाल क्या है
-      - स्वच्छता की जानकारी
-      - बच्चों के लिए पोषण
-      - ଟୀକାକରଣ ବିଷୟରେ କୁହନ୍ତୁ
-      - ମାତୃ ଯତ୍ନ କଣ
-      - ସ୍ୱଚ୍ଛତା ସୂଚନା
-      - ପିଲାମାନଙ୍କ ପାଇଁ ପୋଷଣ
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
 
-  - intent: maternal_care
-    examples: |
-      - pregnancy care
-      - what to do during pregnancy
-      - maternal health
-      - गर्भावस्था देखभाल
-      - गर्भावस्था के दौरान क्या करें
-      - मातृ स्वास्थ्य
-      - ଗର୍ଭାବସ୍ଥା ଯତ୍ନ
-      - ଗର୍ଭାବସ୍ଥା ସମୟରେ କଣ କରିବେ
-      - ମାତୃ ସ୍ୱାସ୍ଥ୍ୟ
-
-  - intent: vaccination
-    examples: |
-      - vaccine schedule
-      - when to vaccinate child
-      - vaccination information
-      - टीका कार्यक्रम
-      - बच्चे को कब टीका लगवाना है
-      - टीकाकरण जानकारी
-      - ଟୀକା କାର୍ଯ୍ୟକ୍ରମ
-      - ପିଲାକୁ କେତେବେଳେ ଟୀକା ଦେବେ
-      - ଟୀକାକରଣ ସୂଚନା
-
-  - intent: hygiene
-    examples: |
-      - how to maintain hygiene
-      - cleanliness tips
-      - personal hygiene
-      - स्वच्छता कैसे बनाए रखें
-      - सफाई के टिप्स
-      - व्यक्तिगत स्वच्छता
-      - ସ୍ୱଚ୍ଛତା କିପରି ରଖିବେ
-      - ସଫାଇ ଟିପ୍ସ
-      - ବ୍ୟକ୍ତିଗତ ସ୍ୱଚ୍ଛତା
-
-  - intent: nutrition
-    examples: |
-      - child nutrition
-      - healthy food for babies
-      - balanced diet
-      - बच्चे का पोषण
-      - शिशुओं के लिए स्वस्थ भोजन
-      - संतुलित आहार
-      - ପିଲା ପୋଷଣ
-      - ଶିଶୁମାନଙ୍କ ପାଇଁ ସ୍ୱାସ୍ଥ୍ୟକର ଖାଦ୍ୟ
-      - ସନ୍ତୁଲିତ ଆହାର
-
-  - intent: disease_info
-    examples: |
-      - what is dengue
-      - malaria symptoms
-      - about tuberculosis
-      - डेंगू क्या है
-      - मलेरिया के लक्षण
-      - तपेदिक के बारे में
-      - ଡେଙ୍ଗୁ କଣ
-      - ମ୍ୟାଲେରିଆ ଲକ୍ଷଣ
-      - ଟିବି ବିଷୟରେ
-
-  - intent: emergency
-    examples: |
-      - emergency
-      - urgent help
-      - medical emergency
-      - आपातकाल
-      - तत्काल मदद
-      - चिकित्सा आपातकाल
-      - ଆପାତକାଳ
-      - ତୁରନ୍ତ ସାହାଯ୍ୟ
-      - ଚିକିତ୍ସା ଆପାତକାଳ
-
-  - intent: bot_challenge
-    examples: |
-      - are you a bot?
-      - are you a human?
-      - am I talking to a bot?
-      - am I talking to a human?
-      - आप बॉट हैं?
-      - आप इंसान हैं?
-      - क्या मैं बॉट से बात कर रहा हूँ?
-      - ଆପଣ ବଟ୍ ଅଛନ୍ତି?
-      - ଆପଣ ମନୁଷ୍ୟ ଅଛନ୍ତି?
-      - ମୁଁ ବଟ୍ ସହିତ କଥା ହେଉଛି?
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

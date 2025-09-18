@@ -1,47 +1,30 @@
 version: "3.1"
 
 stories:
-  - story: greet and symptom report
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: symptom_report
-      - action: utter_symptom_acknowledge
 
-  - story: maternal care information
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: maternal_care
-      - action: utter_maternal_care_info
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
 
-  - story: vaccination information
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: vaccination
-      - action: utter_vaccination_info
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
 
-  - story: emergency response
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: emergency
-      - action: utter_emergency_advice
-
-  - story: health info request
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: health_info_request
-      - action: utter_maternal_care_info
-
-  - story: bot challenge
-    steps:
-      - intent: bot_challenge
-      - action: utter_iamabot
-
-  - story: goodbye
-    steps:
-      - intent: goodbye
-      - action: utter_goodbye
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
