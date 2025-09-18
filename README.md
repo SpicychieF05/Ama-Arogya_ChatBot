@@ -57,6 +57,8 @@ Ama Arogya is an AI-powered chatbot designed to bridge the health information ga
 - `GET /health`: Health check
 - `POST /chat`: Send message to chatbot
 
+<div style="color: white;background-color:rgb(1, 68, 105); padding: 15px; border-radius: 8px; margin: 10px 0;">
+
 ### Chat Request Format
 ```json
 {
@@ -64,6 +66,9 @@ Ama Arogya is an AI-powered chatbot designed to bridge the health information ga
   "sender_id": "user123",
   "language": "en"
 }
+```
+
+</div>
 ## Odisha Health Chatbot
 
 Odisha Health Chatbot is an automated, WhatsApp-accessible public health assistant designed to deliver reliable health information, symptom guidance, and local health resources to people across Odisha — with particular attention to rural and low-bandwidth settings. The project combines Rasa for natural language understanding, a lightweight Flask API for webhook handling, SQLite for local data storage, and Twilio's WhatsApp API for messaging.
@@ -73,21 +78,34 @@ This README explains how to set up, run, and contribute to the project.
 ---
 
 Table of Contents
-- [Project Title & Description](#project-title--description)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Architecture Overview](#architecture-overview)
-- [Setup & Installation](#setup--installation)
-- [Configuration](#configuration)
-- [Usage Instructions](#usage-instructions)
-- [Admin Panel (Optional)](#admin-panel-optional)
-- [Development Notes / Roadmap](#development-notes--roadmap)
-- [Contributing Guidelines](#contributing-guidelines)
-- [License](#license)
-- [Optional: API Endpoints](#optional-api-endpoints)
-- [Optional: Database Schema](#optional-database-schema)
-- [Known Issues](#known-issues)
-- [References](#references)
+- [Ama Arogya - AI-Driven Public Health Chatbot for Rural Odisha](#ama-arogya---ai-driven-public-health-chatbot-for-rural-odisha)
+  - [Project Overview](#project-overview)
+  - [Features](#features)
+  - [Technology Stack](#technology-stack)
+  - [Installation](#installation)
+  - [Training the Model](#training-the-model)
+  - [Running the Chatbot](#running-the-chatbot)
+  - [API Endpoints](#api-endpoints)
+    - [Chat Request Format](#chat-request-format)
+  - [Odisha Health Chatbot](#odisha-health-chatbot)
+  - [Project Title \& Description](#project-title--description)
+  - [Features](#features-1)
+  - [Technologies Used](#technologies-used)
+  - [Architecture Overview](#architecture-overview)
+  - [Setup \& Installation](#setup--installation)
+  - [Configuration](#configuration)
+  - [Usage Instructions](#usage-instructions)
+  - [Admin Panel (Optional)](#admin-panel-optional)
+  - [Development Notes / Roadmap](#development-notes--roadmap)
+  - [Contributing Guidelines](#contributing-guidelines)
+  - [License](#license)
+  - [Optional: API Endpoints](#optional-api-endpoints)
+  - [Optional: Database Schema](#optional-database-schema)
+  - [Known Issues](#known-issues)
+  - [References](#references)
+    - [WhatsApp Integration (Future)](#whatsapp-integration-future)
+  - [Contributing](#contributing)
+  - [License](#license-1)
 
 ---
 
