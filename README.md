@@ -19,97 +19,110 @@ Ama Arogya is an AI-powered chatbot designed to bridge the health information ga
 - **Database**: SQLite (for health content storage)
 - **Deployment**: Local deployment with ngrok for testing
 
-## Installation
+## 🚀 Quick Start Guide
 
-1. Clone the repository
-2. Create a virtual environment:
-   ```bash
-   python -m venv .venv
-   source .venv/Scripts/activate  # On Windows
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Prerequisites
+- Python 3.10+ installed
+- Git installed
 
-## Training the Model
+### 1. Clone and Navigate
+```bash
+git clone https://github.com/SpicychieF05/Odisha_ChatBot.git
+cd Odisha_ChatBot
+```
 
-1. Initialize Rasa project:
-   ```bash
-   rasa init --no-prompt
-   ```
-2. Train the model:
-   ```bash
-   rasa train
-   ```
+### 2. Setup Virtual Environment
+```bash
+python -m venv .venv
+source .venv/Scripts/activate  # Windows Git Bash/WSL
+# or on Unix: source .venv/bin/activate
+```
 
-## Running the Chatbot
+### 3. Install Dependencies
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
 
-1. Start the FastAPI backend:
-   ```bash
-   uvicorn main:app --reload
-   ```
-2. Test the API at `http://localhost:8000`
+### 4. Initialize Database
+```bash
+python database.py
+```
+
+### 5. Train Rasa Model (if needed)
+```bash
+rasa train
+```
+
+### 6. Start the Server
+```bash
+python -m uvicorn main:app --host 0.0.0.0 --port 8001 --reload
+```
+
+### 7. Access the Application
+- **Demo Frontend**: http://localhost:8001/
+- **Alternative Demo**: http://localhost:8001/demo
+- **Analytics Dashboard**: http://localhost:8001/dashboard
+- **API Documentation**: http://localhost:8001/docs
+- **Health Check**: http://localhost:8001/health
+
+### 8. Test the Chatbot
+
+**Option 1: Web Interface**
+Open http://localhost:8001/ in your browser and start chatting!
+
+**Option 2: Command Line Test**
+```bash
+curl -X POST "http://localhost:8001/chat" \
+  -H "Content-Type: application/json" \
+  -d '{"message": "Hello, I have a fever", "sender_id": "test_user", "language": "en"}'
+```
+
+**Option 3: Run Test Script**
+```bash
+python test_chat.py
+```
+
+### Sample Queries to Try
+- **English**: "Hello, I have a fever and headache"
+- **Hindi**: "गर्भावस्था के दौरान क्या सावधानी बरतनी चाहिए?"
+- **Odia**: "ନମସ୍କାର, ଟିକା ସମ୍ବନ୍ଧରେ ଜାଣିବାକୁ ଚାହୁଁଛି"
+- **Vaccination**: "Tell me about vaccination schedule"
+- **Maternal Care**: "pregnancy care advice"
+
+### Stop the Server
+Press `Ctrl+C` in the terminal where the server is running.
 
 ## API Endpoints
 
-- `GET /`: Root endpoint
+- `GET /`: Demo frontend interface
+- `GET /demo`: Alternative demo route  
 - `GET /health`: Health check
+- `GET /dashboard`: Analytics dashboard
+- `GET /docs`: API documentation
 - `POST /chat`: Send message to chatbot
-
-<div style="color: white;background-color:rgb(1, 68, 105); padding: 15px; border-radius: 8px; margin: 10px 0;">
 
 ### Chat Request Format
 ```json
 {
   "message": "Hello",
-  "sender_id": "user123",
+  "sender_id": "user123", 
   "language": "en"
 }
 ```
 
-</div>
-## Odisha Health Chatbot
-
-Odisha Health Chatbot is an automated, WhatsApp-accessible public health assistant designed to deliver reliable health information, symptom guidance, and local health resources to people across Odisha — with particular attention to rural and low-bandwidth settings. The project combines Rasa for natural language understanding, a lightweight Flask API for webhook handling, SQLite for local data storage, and Twilio's WhatsApp API for messaging.
-
-This README explains how to set up, run, and contribute to the project.
-
----
-
-Table of Contents
-- [Ama Arogya - AI-Driven Public Health Chatbot for Rural Odisha](#ama-arogya---ai-driven-public-health-chatbot-for-rural-odisha)
-  - [Project Overview](#project-overview)
-  - [Features](#features)
-  - [Technology Stack](#technology-stack)
-  - [Installation](#installation)
-  - [Training the Model](#training-the-model)
-  - [Running the Chatbot](#running-the-chatbot)
-  - [API Endpoints](#api-endpoints)
-    - [Chat Request Format](#chat-request-format)
-  - [Odisha Health Chatbot](#odisha-health-chatbot)
-  - [Project Title \& Description](#project-title--description)
-  - [Features](#features-1)
-  - [Technologies Used](#technologies-used)
-  - [Architecture Overview](#architecture-overview)
-  - [Setup \& Installation](#setup--installation)
-  - [Configuration](#configuration)
-  - [Usage Instructions](#usage-instructions)
-  - [Admin Panel (Optional)](#admin-panel-optional)
-  - [Development Notes / Roadmap](#development-notes--roadmap)
-  - [Contributing Guidelines](#contributing-guidelines)
-  - [License](#license)
-  - [Optional: API Endpoints](#optional-api-endpoints)
-  - [Optional: Database Schema](#optional-database-schema)
-  - [Known Issues](#known-issues)
-  - [References](#references)
-    - [WhatsApp Integration (Future)](#whatsapp-integration-future)
-  - [Contributing](#contributing)
-  - [License](#license-1)
+### Chat Response Format
+```json
+{
+  "response": "Hello! How can I help you?",
+  "language": "en",
+  "intent": "greet"
+}
+```
 
 ---
 
-## Project Title & Description
+## Project Details
 
 - Project: **Odisha Health Chatbot**
 - Brief introduction: An AI-driven WhatsApp chatbot providing timely, localised public health information and referrals to users in Odisha. The bot supports English, Hindi, and Odia and is optimized for low-bandwidth, text-first interactions.
