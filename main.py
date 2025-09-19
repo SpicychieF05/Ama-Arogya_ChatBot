@@ -11,6 +11,9 @@ import os
 app = FastAPI(title="Ama Arogya - Public Health Chatbot API", version="1.0.0")
 
 # Mount static files for frontend
+app.mount("/static", StaticFiles(directory="frontend"), name="static")
+
+# Mount static files for frontend
 frontend_path = os.path.join(os.path.dirname(__file__), "frontend")
 if os.path.exists(frontend_path):
     app.mount("/static", StaticFiles(directory=frontend_path), name="static")
@@ -126,14 +129,6 @@ async def chat(request: ChatRequest, db: Session = Depends(get_db)):
         language=language,
         intent=intent
     )
-
-
-@app.get("/")
-async def root():
-    """
-    Root endpoint
-    """
-    return {"message": "Ama Arogya - Public Health Chatbot API", "status": "running"}
 
 
 @app.get("/health")
