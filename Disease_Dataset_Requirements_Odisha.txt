@@ -1,0 +1,390 @@
+================================================================================
+                    DISEASE DATASET REQUIREMENTS FOR ODISHA HEALTH CHATBOT
+                                    "AMA AROGYA"
+================================================================================
+
+PROJECT: Odisha Health Chatbot - Rasa NLU Training Data Requirements
+DATE: September 20, 2025
+FOCUS: Common Health Problems in Odisha State, India
+
+================================================================================
+                                 OVERVIEW
+================================================================================
+
+This document outlines the comprehensive disease dataset requirements to optimize
+the Rasa-based health chatbot for Odisha's specific health challenges. The 
+datasets should cover regional health patterns, multilingual support (English,
+Hindi, Odia), and culturally appropriate responses.
+
+TARGET AUDIENCE: Rural and semi-urban populations of Odisha
+LANGUAGES: English, Hindi, Odia (Oriya)
+DEPLOYMENT: WhatsApp, SMS, Web interface
+
+================================================================================
+                            PRIORITY DISEASE CATEGORIES
+================================================================================
+
+1. VECTOR-BORNE DISEASES (HIGHEST PRIORITY)
+   ========================================
+   
+   Rationale: Odisha is endemic for multiple vector-borne diseases due to 
+   climate, geography, and monsoon patterns.
+
+   A. MALARIA
+   ----------
+   Intent: ask_malaria
+   Training Examples:
+   - English: "I have fever with chills", "malaria symptoms", "mosquito bite fever"
+   - Hindi: "बुखार और कंपकंपी है", "ठंड लगकर बुखार", "मलेरिया के लक्षण"
+   - Odia: "ମଲେରିଆ ଲକ୍ଷଣ", "ଥଣ୍ଡା ଲାଗି ଜ୍ବର", "ମଶାକ କାମୁଡ଼ା ଜ୍ବର"
+   
+   Key Symptoms: Intermittent fever, chills, sweating, body ache
+   Response Focus: Immediate care, when to seek help, prevention
+   
+   B. DENGUE
+   ---------
+   Intent: ask_dengue
+   Training Examples:
+   - English: "severe headache with fever", "dengue symptoms", "body pain fever"
+   - Hindi: "तेज़ बुखार और सिरदर्द", "डेंगू के लक्षण", "शरीर में दर्द"
+   - Odia: "ଡେଙ୍ଗୁ ଜ୍ବର", "ତୀବ୍ର ମାଥା ବଥା", "ଶରୀର ଦୁଖ"
+   
+   Key Symptoms: High fever, severe headache, muscle pain, bleeding
+   Response Focus: Platelet monitoring, hydration, emergency signs
+   
+   C. CHIKUNGUNYA
+   --------------
+   Intent: ask_chikungunya
+   Training Examples:
+   - English: "joint pain and fever", "swollen joints", "muscle pain fever"
+   - Hindi: "जोड़ों में दर्द", "मांसपेशियों में दर्द", "बुखार के साथ दर्द"
+   - Odia: "ଗଣ୍ଠି ବଥା", "ମାଂସପେଶୀ ଦୁଖ", "ଜ୍ବର ସହ ଦୁଖ"
+   
+   Key Symptoms: Joint pain, fever, rash, muscle ache
+   Response Focus: Pain management, mobility, long-term care
+
+2. WATER-BORNE DISEASES (HIGH PRIORITY)
+   ====================================
+   
+   Rationale: Monsoon flooding, contaminated water sources, poor sanitation
+   
+   A. DIARRHEAL DISEASES
+   ---------------------
+   Intent: ask_diarrhea
+   Training Examples:
+   - English: "loose motions", "watery stools", "diarrhea dehydration"
+   - Hindi: "दस्त हो रहा है", "पेट खराब है", "पानी जैसा मल"
+   - Odia: "ପେଟ ଖରାପ", "ତରଳ ମଳ", "ଅତିସାର"
+   
+   Sub-categories: Acute diarrhea, Dysentery, Cholera
+   Response Focus: ORS preparation, hydration, when to hospitalize
+   
+   B. TYPHOID
+   ----------
+   Intent: ask_typhoid
+   Training Examples:
+   - English: "prolonged fever", "typhoid symptoms", "stomach pain fever"
+   - Hindi: "लगातार बुखार", "टाइफाइड के लक्षण", "पेट दर्द बुखार"
+   - Odia: "ଟାଇଫଏଡ ଲକ୍ଷଣ", "ଲଗାତାର ଜ୍ବର", "ପେଟ ଦୁଖ"
+   
+   Key Symptoms: Step-ladder fever, rose spots, weakness
+   Response Focus: Antibiotic compliance, nutrition, complications
+
+3. RESPIRATORY DISEASES (HIGH PRIORITY)
+   ====================================
+   
+   Rationale: Industrial pollution, mining dust, seasonal variations
+   
+   A. TUBERCULOSIS
+   ---------------
+   Intent: ask_tuberculosis
+   Training Examples:
+   - English: "persistent cough", "blood in cough", "night sweats"
+   - Hindi: "लगातार खांसी", "खांसी में खून", "रात को पसीना"
+   - Odia: "ଲଗାତାର କାଶ", "କାଶରେ ରକ୍ତ", "ରାତିରେ ଗୁଇ"
+   
+   Key Symptoms: Chronic cough, hemoptysis, weight loss, night sweats
+   Response Focus: DOTS program, contact screening, stigma reduction
+   
+   B. PNEUMONIA
+   ------------
+   Intent: ask_pneumonia
+   Training Examples:
+   - English: "difficulty breathing", "chest pain cough", "rapid breathing"
+   - Hindi: "सांस लेने में तकलीफ", "छाती में दर्द", "तेज़ सांस"
+   - Odia: "ଶ୍ବାସ କଷ୍ଟ", "ଛାତି ଦୁଖ", "ଦ୍ରୁତ ଶ୍ବାସ"
+   
+   Key Symptoms: Breathing difficulty, chest pain, fever
+   Response Focus: Vaccination, early treatment, danger signs
+
+4. NUTRITIONAL DEFICIENCIES (MEDIUM-HIGH PRIORITY)
+   ================================================
+   
+   Rationale: Rural poverty, food insecurity, dietary habits
+   
+   A. ANEMIA
+   ---------
+   Intent: ask_anemia
+   Training Examples:
+   - English: "feeling weak tired", "pale skin nails", "iron deficiency"
+   - Hindi: "कमजोरी और थकान", "पीला चेहरा", "खून की कमी"
+   - Odia: "ଦୁର୍ବଳତା", "ପତଳା ରଙ୍ଗ", "ରକ୍ତହୀନତା"
+   
+   Key Symptoms: Fatigue, pallor, weakness, breathlessness
+   Response Focus: Iron-rich foods, supplementation, screening
+   
+   B. MALNUTRITION (PEDIATRIC)
+   ---------------------------
+   Intent: ask_malnutrition
+   Training Examples:
+   - English: "child not gaining weight", "stunted growth", "frequent infections"
+   - Hindi: "बच्चा कमजोर है", "वजन नहीं बढ़ रहा", "बार बार बीमार"
+   - Odia: "ପିଲା ଦୁର୍ବଳ", "ଓଜନ ବୃଦ୍ଧି ନାହିଁ", "ବାରମ୍ବାର ପୀଡ଼ିତ"
+   
+   Key Signs: Weight loss, growth retardation, infections
+   Response Focus: Nutritional rehabilitation, ICDS programs
+
+5. MATERNAL & CHILD HEALTH (HIGH PRIORITY)
+   ========================================
+   
+   Rationale: High MMR and IMR in rural Odisha
+   
+   A. PREGNANCY COMPLICATIONS
+   --------------------------
+   Intent: ask_pregnancy_complications
+   Training Examples:
+   - English: "bleeding during pregnancy", "high BP pregnancy", "baby movement decreased"
+   - Hindi: "गर्भावस्था में खून", "हाई BP प्रेगनेंसी", "बच्चे की हलचल कम"
+   - Odia: "ଗର୍ଭାବସ୍ଥାରେ ରକ୍ତସ୍ରାବ", "ଉଚ୍ଚ ରକ୍ତଚାପ", "ପିଲା ଚଳନ କମ"
+   
+   Key Issues: Bleeding, hypertension, reduced fetal movement
+   Response Focus: Emergency referral, ANC importance, danger signs
+   
+   B. NEWBORN CARE
+   ---------------
+   Intent: ask_newborn_care
+   Training Examples:
+   - English: "newborn not feeding", "baby fever", "jaundice newborn"
+   - Hindi: "नवजात दूध नहीं पी रहा", "बच्चे को बुखार", "पीलिया"
+   - Odia: "ନବଜାତକ କ୍ଷୀର ପିଉନାହିଁ", "ପିଲାର ଜ୍ବର", "ପିତ୍ତଳ ରୋଗ"
+   
+   Key Issues: Feeding problems, infections, jaundice
+   Response Focus: Breastfeeding support, vaccination, danger signs
+
+6. CHRONIC DISEASES (EMERGING PRIORITY)
+   ====================================
+   
+   Rationale: Lifestyle changes, urbanization effects
+   
+   A. DIABETES MELLITUS
+   --------------------
+   Intent: ask_diabetes_complications
+   Training Examples:
+   - English: "frequent urination", "wounds not healing", "blurred vision"
+   - Hindi: "बार बार पेशाब", "घाव नहीं भर रहे", "धुंधला दिखना"
+   - Odia: "ବାରମ୍ବାର ପରିସ୍ରା", "କ୍ଷତ ଶୁଖୁନାହିଁ", "ଦୃଷ୍ଟି ଅସ୍ପଷ୍ଟ"
+   
+   Key Symptoms: Polyuria, poor wound healing, vision problems
+   Response Focus: Lifestyle modification, medication compliance, screening
+   
+   B. HYPERTENSION
+   ---------------
+   Intent: ask_hypertension
+   Training Examples:
+   - English: "high blood pressure", "headache dizziness", "chest tightness"
+   - Hindi: "हाई ब्लड प्रेशर", "सिरदर्द चक्कर", "छाती में जकड़न"
+   - Odia: "ଉଚ୍ଚ ରକ୍ତଚାପ", "ମାଥା ବଥା ଚକ୍କର", "ଛାତି ଚାପ"
+   
+   Key Symptoms: Headache, dizziness, chest discomfort
+   Response Focus: Salt reduction, exercise, medication adherence
+
+7. SKIN CONDITIONS (MEDIUM PRIORITY)
+   =================================
+   
+   Rationale: Tropical climate, poor hygiene, occupational exposure
+   
+   Intent: ask_skin_conditions
+   Training Examples:
+   - English: "skin rash itching", "fungal infection", "scabies treatment"
+   - Hindi: "खुजली और दाने", "फंगल इन्फेक्शन", "खाज खुजली"
+   - Odia: "ଚର୍ମ ରୋଗ", "କୁଣ୍ଡେଇ", "ଫଙ୍ଗାଲ ସଂକ୍ରମଣ"
+   
+   Key Conditions: Eczema, fungal infections, scabies, contact dermatitis
+   Response Focus: Hygiene, topical treatments, when to refer
+
+8. MENTAL HEALTH (EMERGING PRIORITY)
+   ==================================
+   
+   Rationale: Often overlooked, increasing awareness needed
+   
+   Intent: ask_mental_health
+   Training Examples:
+   - English: "feeling sad depressed", "anxiety stress", "sleep problems"
+   - Hindi: "मानसिक तनाव", "उदासी", "नींद की समस्या"
+   - Odia: "ମାନସିକ ଚାପ", "ଉଦାସୀନତା", "ନିଦ୍ରା ସମସ୍ୟା"
+   
+   Key Issues: Depression, anxiety, stress, sleep disorders
+   Response Focus: Counseling resources, stigma reduction, support systems
+
+================================================================================
+                            IMPLEMENTATION REQUIREMENTS
+================================================================================
+
+1. NLU TRAINING DATA STRUCTURE
+   ============================
+
+   For each disease category, create:
+   
+   A. Intent Definition
+   B. Multi-language Training Examples (minimum 50 per language)
+   C. Entity Recognition (symptoms, duration, severity)
+   D. Response Templates with:
+      - Immediate advice
+      - When to seek medical help
+      - Prevention measures
+      - Local healthcare resources
+
+2. ENTITY RECOGNITION REQUIREMENTS
+   ================================
+
+   Define entities for:
+   - symptom: [fever, cough, pain, rash, etc.]
+   - duration: [acute, chronic, days, weeks]
+   - severity: [mild, moderate, severe]
+   - age_group: [infant, child, adult, elderly]
+   - location: [urban, rural, tribal]
+   - gender: [male, female] (for gender-specific conditions)
+
+3. RESPONSE TEMPLATES STRUCTURE
+   ==============================
+
+   Each response should include:
+   
+   A. Immediate Care Instructions
+   B. Red Flag Symptoms (when to seek emergency care)
+   C. Prevention Measures
+   D. Local Healthcare Resources
+   E. Follow-up Recommendations
+   F. Cultural Sensitivity
+
+4. REGIONAL CUSTOMIZATION
+   =======================
+
+   A. Coastal Districts: Higher malaria, cyclone-related health issues
+   B. Tribal Areas: Malnutrition, traditional medicine integration
+   C. Industrial Areas: Respiratory diseases, occupational health
+   D. Urban Areas: Lifestyle diseases, mental health
+
+5. SEASONAL PATTERNS
+   ==================
+
+   A. Monsoon (June-September): Vector-borne diseases, water-borne diseases
+   B. Post-Monsoon (October-November): Dengue, chikungunya peak
+   C. Winter (December-February): Respiratory infections
+   D. Summer (March-May): Heat-related illnesses, dehydration
+
+================================================================================
+                            DATA SOURCES RECOMMENDATIONS
+================================================================================
+
+1. GOVERNMENT SOURCES
+   ==================
+   - National Family Health Survey (NFHS-5) - Odisha data
+   - District Level Household Survey (DLHS) - Odisha
+   - Annual Health Survey - Odisha specific reports
+   - State Health Mission reports
+   - Integrated Disease Surveillance Program (IDSP) data
+
+2. MEDICAL INSTITUTIONS
+   =====================
+   - SCB Medical College, Cuttack - case studies
+   - AIIMS Bhubaneswar - research publications
+   - District hospitals - common case patterns
+   - Primary Health Centers - field data
+
+3. COMMUNITY HEALTH PROGRAMS
+   ===========================
+   - ASHA worker reports
+   - ANM field experiences
+   - Village Health and Nutrition Day data
+   - Community health volunteer inputs
+
+4. RESEARCH PUBLICATIONS
+   =======================
+   - Indian Journal of Public Health - Odisha studies
+   - WHO South-East Asia reports
+   - State-specific epidemiological studies
+   - University research papers
+
+================================================================================
+                                QUALITY METRICS
+================================================================================
+
+TARGET ACCURACY LEVELS:
+- Intent Classification: >95%
+- Entity Recognition: >90%
+- Response Relevance: >90%
+- Language Detection: >98%
+- Cultural Appropriateness: >95%
+
+TESTING REQUIREMENTS:
+- Cross-validation with medical experts
+- Community validation in different districts
+- Seasonal testing for disease patterns
+- Multi-language consistency checks
+
+================================================================================
+                            IMPLEMENTATION TIMELINE
+================================================================================
+
+PHASE 1 (Weeks 1-2): Vector-borne diseases dataset
+PHASE 2 (Weeks 3-4): Water-borne diseases dataset  
+PHASE 3 (Weeks 5-6): Respiratory diseases dataset
+PHASE 4 (Weeks 7-8): Maternal & child health dataset
+PHASE 5 (Weeks 9-10): Chronic diseases dataset
+PHASE 6 (Weeks 11-12): Testing and validation
+
+================================================================================
+                                INTEGRATION NOTES
+================================================================================
+
+1. Database Schema Updates:
+   - Add disease_category field
+   - Include severity_level field
+   - Add regional_variant field
+
+2. API Enhancements:
+   - Disease-specific endpoints
+   - Severity assessment APIs
+   - Referral recommendation system
+
+3. Frontend Modifications:
+   - Disease category selection
+   - Symptom checkers
+   - Emergency contact integration
+
+4. Monitoring & Analytics:
+   - Disease trend tracking
+   - Response effectiveness metrics
+   - User satisfaction scores
+
+================================================================================
+                                CONTACT & SUPPORT
+================================================================================
+
+For implementation support:
+- Technical Team: Development and deployment
+- Medical Advisory Board: Content validation
+- Community Partners: Ground-level testing
+- Government Liaison: Policy compliance
+
+================================================================================
+                                    END OF DOCUMENT
+================================================================================
+
+Last Updated: September 20, 2025
+Version: 1.0
+Status: Draft for Implementation
+
+Note: This document should be reviewed and updated quarterly based on 
+epidemiological data and user feedback from the field deployment.
