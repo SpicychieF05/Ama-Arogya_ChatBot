@@ -10,12 +10,14 @@ body {
     line-height: 1.6;
     color: #333;
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 5px;
 }
 
 /* Header */
@@ -35,7 +37,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 20px;
+    padding: 0.5rem 5px;
 }
 
 .logo {
@@ -53,7 +55,7 @@ body {
 
 .nav {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .nav-link {
@@ -61,7 +63,7 @@ body {
     color: #64748b;
     font-weight: 500;
     transition: color 0.3s ease;
-    padding: 0.5rem 0;
+    padding: 0.25rem 0;
     position: relative;
 }
 
