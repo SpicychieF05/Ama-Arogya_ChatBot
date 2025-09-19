@@ -18,6 +18,18 @@ intents:
   - ask_blood_pressure
   - ask_first_aid
   - ask_general_health
+  # Vector-borne diseases
+  - ask_malaria
+  - ask_dengue
+  - ask_chikungunya
+  - ask_vector_prevention
+  - ask_fever_emergency
+  # Water-borne diseases
+  - ask_diarrhea
+  - ask_typhoid
+  - ask_cholera
+  - ask_hepatitis
+  - ask_waterborne_prevention
 
 entities:
   - symptom
