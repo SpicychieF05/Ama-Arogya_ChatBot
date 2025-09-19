@@ -1,12 +1,19 @@
 from fastapi import FastAPI, HTTPException, Depends
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from database import SessionLocal, HealthContent, UserInteraction, get_db
 from typing import Optional
+import os
 
 app = FastAPI(title="Ama Arogya - Public Health Chatbot API", version="1.0.0")
+
+# Mount static files for frontend
+frontend_path = os.path.join(os.path.dirname(__file__), "frontend")
+if os.path.exists(frontend_path):
+    app.mount("/static", StaticFiles(directory=frontend_path), name="static")
 
 
 class ChatRequest(BaseModel):
@@ -159,3 +166,18 @@ async def get_dashboard():
     """
     with open("dashboard.html", "r", encoding="utf-8") as f:
         return f.read()
+
+
+@app.get("/", response_class=HTMLResponse)
+@app.get("/demo", response_class=HTMLResponse)
+async def get_demo():
+    """
+    Serve the demo frontend interface
+    """
+    frontend_file = os.path.join(os.path.dirname(
+        __file__), "frontend", "index.html")
+    if os.path.exists(frontend_file):
+        with open(frontend_file, "r", encoding="utf-8") as f:
+            return f.read()
+    else:
+        return HTMLResponse("Demo frontend not found. Please ensure frontend files are in the 'frontend' directory.", status_code=404)
