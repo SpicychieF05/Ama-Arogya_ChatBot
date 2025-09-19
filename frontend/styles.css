@@ -108,6 +108,18 @@ body {
     background: #2563eb;
 }
 
+/* Increase spacing only between 'Live Demo' and 'Features' */
+.nav .nav-link[href="#demo"] {
+    margin-right: var(--space-4); /* add a bit more gap between #demo and #features */
+}
+
+@media (max-width: 768px) {
+    /* Nav is hidden on mobile; keep safe if shown in future */
+    .nav .nav-link[href="#demo"] {
+        margin-right: 0;
+    }
+}
+
 /* Hero Section */
 .hero {
     padding: 120px 0 var(--section-y);
