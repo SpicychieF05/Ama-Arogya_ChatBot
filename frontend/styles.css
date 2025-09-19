@@ -16,6 +16,7 @@
     --gutter: clamp(1rem, 4vw, 2rem);
     --section-y: clamp(3rem, 10vw, 6rem);
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -55,8 +56,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* Tighten vertical padding */
     padding-top: var(--space-3);
     padding-bottom: var(--space-3);
+    /* Remove extra left/right space only for navbar */
+    max-width: none;
+    width: 100%;
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
 }
 
 .logo {
