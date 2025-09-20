@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from database import SessionLocal, HealthContent, UserInteraction, get_db
@@ -13,9 +13,6 @@ import json
 app = FastAPI(title="Ama Arogya - Public Health Chatbot API", version="1.0.0")
 
 # Mount static files for frontend
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
-
-# Mount static files for frontend
 frontend_path = os.path.join(os.path.dirname(__file__), "frontend")
 if os.path.exists(frontend_path):
     app.mount("/static", StaticFiles(directory=frontend_path), name="static")
@@ -25,12 +22,16 @@ RASA_API_URL = "http://localhost:5005"
 
 
 class ChatRequest(BaseModel):
+    model_config = ConfigDict(arbitrary_types_allowed=True)
+
     message: str
     sender_id: str
     language: Optional[str] = "en"
 
 
 class ChatResponse(BaseModel):
+    model_config = ConfigDict(arbitrary_types_allowed=True)
+
     response: str
     language: str
     intent: Optional[str] = None
